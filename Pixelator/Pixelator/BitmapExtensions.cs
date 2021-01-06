@@ -112,6 +112,8 @@ namespace Pixelator
             Bitmap result = new Bitmap(width, height);
             using (Graphics g = Graphics.FromImage(result))
             {
+                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
                 g.DrawImage(b, 0, 0, width, height);
             }
             return result;
@@ -122,6 +124,8 @@ namespace Pixelator
             Bitmap result = new Bitmap((int)(b.Width * scaleX), (int)(b.Height * scaleY));
             using (Graphics g = Graphics.FromImage(result))
             {
+                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.None;
+                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
                 g.DrawImage(b, 0, 0, (int)(result.Width), (int)(result.Height));
             }
             return result;
@@ -163,8 +167,8 @@ namespace Pixelator
         {
             System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
             sw.Start();
-            BitmapData imageData = b.LockBits(new Rectangle(0, 0, b.Width, b.Height), ImageLockMode.ReadWrite, PixelFormat.Format24bppRgb);
-            int bytesPerPixel = 3;
+            BitmapData imageData = b.LockBits(new Rectangle(0, 0, b.Width, b.Height), ImageLockMode.ReadWrite, b.PixelFormat);
+            int bytesPerPixel = 4;
             byte* scan0 = (byte*)imageData.Scan0.ToPointer();
             int stride = imageData.Stride;
 
@@ -177,34 +181,98 @@ namespace Pixelator
                     int bIndex = x * bytesPerPixel;
                     int gIndex = bIndex + 1;
                     int rIndex = bIndex + 2;
+                    int aIndex = bIndex + 3;
+                    int pixelR = row[rIndex];
+                    int pixelG = row[gIndex];
+                    int pixelB = row[bIndex];
+                    int pixelA = row[aIndex];
+                    var c = Color.FromArgb(pixelA, pixelR, pixelG, pixelB);
+
+                    if (c.A == 255)
+                    {
+                        Color nearest = c;
+                        double delta = int.MaxValue;
+                        for (int k = 0; k < comparisons.Count; k++)
+                        {
+                            if (comparisons[k].values.ContainsKey(c))
+                            {
+                                row[rIndex] = comparisons[k].key.R;
+                                row[gIndex] = comparisons[k].key.G;
+                                row[bIndex] = comparisons[k].key.B;
+                                break;
+                            }
+                            var curDelta = deltaSolver(comparisons[k].key, c);
+                            if (curDelta < delta)
+                            {
+                                delta = curDelta;
+                                row[rIndex] = comparisons[k].key.R;
+                                row[gIndex] = comparisons[k].key.G;
+                                row[bIndex] = comparisons[k].key.B;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        row[rIndex] = 0;
+                        row[gIndex] = 0;
+                        row[bIndex] = 0;
+                        row[aIndex] = 0;
+                    }
+                });
+            }
+            b.UnlockBits(imageData);
+            sw.LogAndReset("UnsafeColorWithComparer");
+        }
+
+        public static unsafe void UnsafeColorWithPalette(this Bitmap b, List<Color> palette, Func<Color, Color, double> deltaSolver)
+        {
+            var tempCol = b.GetPixel(0, 0);
+            System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+            sw.Start();
+            BitmapData imageData = b.LockBits(new Rectangle(0, 0, b.Width, b.Height), ImageLockMode.ReadWrite, b.PixelFormat);
+            int bytesPerPixel = 4;
+            byte* scan0 = (byte*)imageData.Scan0.ToPointer();
+            int stride = imageData.Stride;
+
+            for (int y = 0; y < imageData.Height; y++)
+            {
+                byte* row = scan0 + (y * stride);
+
+                Parallel.For(0, imageData.Width, (x) =>
+                {
+                    int bIndex = x * bytesPerPixel;
+                    int gIndex = bIndex + 1;
+                    int rIndex = bIndex + 2;
+                    int aIndex = bIndex + 3;
 
                     int pixelR = row[rIndex];
                     int pixelG = row[gIndex];
                     int pixelB = row[bIndex];
+                    int pixelA = row[aIndex];
+                    var c = Color.FromArgb(pixelA, pixelR, pixelG, pixelB);
 
-                    var c = Color.FromArgb(pixelR, pixelG, pixelB);
-
-                    Color nearest = c;
-                    double delta = int.MaxValue;
-                    for (int k = 0; k < comparisons.Count; k++)
+                    if (c.A == 255)
                     {
-                        if (c.A == 0)
-                            break;
-                        if (comparisons[k].values.ContainsKey(c))
+                        Color nearest = c;
+                        double delta = int.MaxValue;
+                        for (int k = 0; k < palette.Count; k++)
                         {
-                            row[rIndex] = comparisons[k].key.R;
-                            row[gIndex] = comparisons[k].key.G;
-                            row[bIndex] = comparisons[k].key.B;
-                            break;
+                            var curDelta = deltaSolver(palette[k], c);
+                            if (curDelta < delta)
+                            {
+                                delta = curDelta;
+                                row[rIndex] = palette[k].R;
+                                row[gIndex] = palette[k].G;
+                                row[bIndex] = palette[k].B;
+                            }
                         }
-                        var curDelta = deltaSolver(comparisons[k].key, c);
-                        if (curDelta < delta)
-                        {
-                            delta = curDelta;
-                            row[rIndex] = comparisons[k].key.R;
-                            row[gIndex] = comparisons[k].key.G;
-                            row[bIndex] = comparisons[k].key.B;
-                        }
+                    }
+                    else
+                    {
+                        row[rIndex] = 0;
+                        row[gIndex] = 0;
+                        row[bIndex] = 0;
+                        row[aIndex] = 0;
                     }
                 });
             }

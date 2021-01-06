@@ -154,7 +154,8 @@ namespace Pixelator
             Parallel.For(0, centroids.Count, (i) =>
             {
                 Color before = centroids[i].key;
-                centroids[i].key = ColorExtension.SquareAvarage(centroids[i].values.Keys.ToArray());
+                if(!centroids[i].values.IsEmpty)
+                    centroids[i].key = ColorExtension.SquareAvarage(centroids[i].values.Keys.ToArray());
                 if (before != centroids[i].key)
                     changed = true;
             });

@@ -29,72 +29,6 @@
           }
         }
       },
-      "Newtonsoft.Json/12.0.3": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        }
-      },
-      "OpenCvSharp4/4.5.0.20201013": {
-        "type": "package",
-        "dependencies": {
-          "System.Drawing.Common": "4.7.0",
-          "System.Memory": "4.5.4",
-          "System.Runtime.CompilerServices.Unsafe": "4.7.1"
-        },
-        "compile": {
-          "lib/netcoreapp2.1/OpenCvSharp.Blob.dll": {},
-          "lib/netcoreapp2.1/OpenCvSharp.Extensions.dll": {},
-          "lib/netcoreapp2.1/OpenCvSharp.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/OpenCvSharp.Blob.dll": {},
-          "lib/netcoreapp2.1/OpenCvSharp.Extensions.dll": {},
-          "lib/netcoreapp2.1/OpenCvSharp.dll": {}
-        }
-      },
-      "OpenCvSharp4.runtime.win/4.5.0.20201013": {
-        "type": "package",
-        "build": {
-          "build/netcoreapp/OpenCvSharp4.runtime.win.props": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win-x64/native/OpenCvSharpExtern.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/OpenCvSharpExtern.pdb": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x64/native/opencv_videoio_ffmpeg450_64.dll": {
-            "assetType": "native",
-            "rid": "win-x64"
-          },
-          "runtimes/win-x86/native/OpenCvSharpExtern.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/OpenCvSharpExtern.pdb": {
-            "assetType": "native",
-            "rid": "win-x86"
-          },
-          "runtimes/win-x86/native/opencv_videoio_ffmpeg450.dll": {
-            "assetType": "native",
-            "rid": "win-x86"
-          }
-        }
-      },
-      "OpenCvSharp4.Windows/4.5.0.20201013": {
-        "type": "package",
-        "dependencies": {
-          "OpenCvSharp4": "4.5.0.20201013",
-          "OpenCvSharp4.runtime.win": "4.5.0.20201013"
-        }
-      },
       "System.Drawing.Common/5.0.0": {
         "type": "package",
         "dependencies": {
@@ -115,24 +49,6 @@
             "assetType": "runtime",
             "rid": "win"
           }
-        }
-      },
-      "System.Memory/4.5.4": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.1/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/_._": {}
-        }
-      },
-      "System.Runtime.CompilerServices.Unsafe/4.7.1": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         }
       }
     }
@@ -184,109 +100,6 @@
         "version.txt"
       ]
     },
-    "Newtonsoft.Json/12.0.3": {
-      "sha512": "6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
-      "type": "package",
-      "path": "newtonsoft.json/12.0.3",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.md",
-        "lib/net20/Newtonsoft.Json.dll",
-        "lib/net20/Newtonsoft.Json.xml",
-        "lib/net35/Newtonsoft.Json.dll",
-        "lib/net35/Newtonsoft.Json.xml",
-        "lib/net40/Newtonsoft.Json.dll",
-        "lib/net40/Newtonsoft.Json.xml",
-        "lib/net45/Newtonsoft.Json.dll",
-        "lib/net45/Newtonsoft.Json.xml",
-        "lib/netstandard1.0/Newtonsoft.Json.dll",
-        "lib/netstandard1.0/Newtonsoft.Json.xml",
-        "lib/netstandard1.3/Newtonsoft.Json.dll",
-        "lib/netstandard1.3/Newtonsoft.Json.xml",
-        "lib/netstandard2.0/Newtonsoft.Json.dll",
-        "lib/netstandard2.0/Newtonsoft.Json.xml",
-        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
-        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
-        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
-        "newtonsoft.json.12.0.3.nupkg.sha512",
-        "newtonsoft.json.nuspec",
-        "packageIcon.png"
-      ]
-    },
-    "OpenCvSharp4/4.5.0.20201013": {
-      "sha512": "cBakb2ASFBxrg6jlSKUI121M6rXoUBONpvHKtpFkDseeuCkV1vYcKtkIjBDorysnJ1yI2aVIVwMiCLv6y3nvSg==",
-      "type": "package",
-      "path": "opencvsharp4/4.5.0.20201013",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net461/OpenCvSharp.Blob.dll",
-        "lib/net461/OpenCvSharp.Blob.xml",
-        "lib/net461/OpenCvSharp.Extensions.dll",
-        "lib/net461/OpenCvSharp.Extensions.xml",
-        "lib/net461/OpenCvSharp.dll",
-        "lib/net461/OpenCvSharp.xml",
-        "lib/net48/OpenCvSharp.Blob.dll",
-        "lib/net48/OpenCvSharp.Blob.xml",
-        "lib/net48/OpenCvSharp.Extensions.dll",
-        "lib/net48/OpenCvSharp.Extensions.xml",
-        "lib/net48/OpenCvSharp.dll",
-        "lib/net48/OpenCvSharp.xml",
-        "lib/netcoreapp2.1/OpenCvSharp.Blob.dll",
-        "lib/netcoreapp2.1/OpenCvSharp.Blob.xml",
-        "lib/netcoreapp2.1/OpenCvSharp.Extensions.dll",
-        "lib/netcoreapp2.1/OpenCvSharp.Extensions.xml",
-        "lib/netcoreapp2.1/OpenCvSharp.dll",
-        "lib/netcoreapp2.1/OpenCvSharp.xml",
-        "lib/netstandard2.0/OpenCvSharp.Blob.dll",
-        "lib/netstandard2.0/OpenCvSharp.Blob.xml",
-        "lib/netstandard2.0/OpenCvSharp.Extensions.dll",
-        "lib/netstandard2.0/OpenCvSharp.Extensions.xml",
-        "lib/netstandard2.0/OpenCvSharp.dll",
-        "lib/netstandard2.0/OpenCvSharp.xml",
-        "lib/netstandard2.1/OpenCvSharp.Blob.dll",
-        "lib/netstandard2.1/OpenCvSharp.Blob.xml",
-        "lib/netstandard2.1/OpenCvSharp.Extensions.dll",
-        "lib/netstandard2.1/OpenCvSharp.Extensions.xml",
-        "lib/netstandard2.1/OpenCvSharp.dll",
-        "lib/netstandard2.1/OpenCvSharp.xml",
-        "opencvsharp4.4.5.0.20201013.nupkg.sha512",
-        "opencvsharp4.nuspec"
-      ]
-    },
-    "OpenCvSharp4.runtime.win/4.5.0.20201013": {
-      "sha512": "0CIqI7CKa2qx/5roM35vhFeoXsOqX/9MM2tPyyToApE5FPsrmTq01miWPFZ+GpqIJ3MphjGEM0/QVuXCOy5/Ww==",
-      "type": "package",
-      "path": "opencvsharp4.runtime.win/4.5.0.20201013",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "build/net/OpenCvSharp4.runtime.win.props",
-        "build/netcoreapp/OpenCvSharp4.runtime.win.props",
-        "build/netstandard/OpenCvSharp4.runtime.win.props",
-        "opencvsharp4.runtime.win.4.5.0.20201013.nupkg.sha512",
-        "opencvsharp4.runtime.win.nuspec",
-        "runtimes/win-x64/native/OpenCvSharpExtern.dll",
-        "runtimes/win-x64/native/OpenCvSharpExtern.pdb",
-        "runtimes/win-x64/native/opencv_videoio_ffmpeg450_64.dll",
-        "runtimes/win-x86/native/OpenCvSharpExtern.dll",
-        "runtimes/win-x86/native/OpenCvSharpExtern.pdb",
-        "runtimes/win-x86/native/opencv_videoio_ffmpeg450.dll"
-      ]
-    },
-    "OpenCvSharp4.Windows/4.5.0.20201013": {
-      "sha512": "/imhDZoO9IhssgbL9maqTL3mvb86Q7MX8nvVX0vEm8H8xMl/WHyCdHoO5IPGP1T5bUmpB4uw2wpZdOpTCoyd2w==",
-      "type": "package",
-      "path": "opencvsharp4.windows/4.5.0.20201013",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "opencvsharp4.windows.4.5.0.20201013.nupkg.sha512",
-        "opencvsharp4.windows.nuspec"
-      ]
-    },
     "System.Drawing.Common/5.0.0": {
       "sha512": "SztFwAnpfKC8+sEKXAFxCBWhKQaEd97EiOL7oZJZP56zbqnLpmxACWA8aGseaUExciuEAUuR9dY8f7HkTRAdnw==",
       "type": "package",
@@ -328,65 +141,10 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
-    },
-    "System.Memory/4.5.4": {
-      "sha512": "1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
-      "type": "package",
-      "path": "system.memory/4.5.4",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/System.Memory.dll",
-        "lib/net461/System.Memory.xml",
-        "lib/netcoreapp2.1/_._",
-        "lib/netstandard1.1/System.Memory.dll",
-        "lib/netstandard1.1/System.Memory.xml",
-        "lib/netstandard2.0/System.Memory.dll",
-        "lib/netstandard2.0/System.Memory.xml",
-        "ref/netcoreapp2.1/_._",
-        "system.memory.4.5.4.nupkg.sha512",
-        "system.memory.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
-    },
-    "System.Runtime.CompilerServices.Unsafe/4.7.1": {
-      "sha512": "zOHkQmzPCn5zm/BH+cxC1XbUS3P4Yoi3xzW7eRgVpDR2tPGSzyMZ17Ig1iRkfJuY0nhxkQQde8pgePNiA7z7TQ==",
-      "type": "package",
-      "path": "system.runtime.compilerservices.unsafe/4.7.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/net461/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/net461/System.Runtime.CompilerServices.Unsafe.xml",
-        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "ref/net461/System.Runtime.CompilerServices.Unsafe.dll",
-        "ref/net461/System.Runtime.CompilerServices.Unsafe.xml",
-        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
-        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
-        "system.runtime.compilerservices.unsafe.4.7.1.nupkg.sha512",
-        "system.runtime.compilerservices.unsafe.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
-      ]
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "Newtonsoft.Json >= 12.0.3",
-      "OpenCvSharp4.Windows >= 4.5.0.20201013",
       "System.Drawing.Common >= 5.0.0"
     ]
   },
@@ -429,14 +187,6 @@
       "netcoreapp3.1": {
         "targetAlias": "netcoreapp3.1",
         "dependencies": {
-          "Newtonsoft.Json": {
-            "target": "Package",
-            "version": "[12.0.3, )"
-          },
-          "OpenCvSharp4.Windows": {
-            "target": "Package",
-            "version": "[4.5.0.20201013, )"
-          },
           "System.Drawing.Common": {
             "target": "Package",
             "version": "[5.0.0, )"

@@ -8,8 +8,6 @@
     ".NETCoreApp,Version=v3.1": {
       "Pixelator/1.0.0": {
         "dependencies": {
-          "Newtonsoft.Json": "12.0.3",
-          "OpenCvSharp4.Windows": "4.5.0.20201013",
           "System.Drawing.Common": "5.0.0"
         },
         "runtime": {
@@ -36,75 +34,6 @@
           }
         }
       },
-      "Newtonsoft.Json/12.0.3": {
-        "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "assemblyVersion": "12.0.0.0",
-            "fileVersion": "12.0.3.23909"
-          }
-        }
-      },
-      "OpenCvSharp4/4.5.0.20201013": {
-        "dependencies": {
-          "System.Drawing.Common": "5.0.0",
-          "System.Memory": "4.5.4",
-          "System.Runtime.CompilerServices.Unsafe": "4.7.1"
-        },
-        "runtime": {
-          "lib/netcoreapp2.1/OpenCvSharp.Blob.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          },
-          "lib/netcoreapp2.1/OpenCvSharp.Extensions.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          },
-          "lib/netcoreapp2.1/OpenCvSharp.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "OpenCvSharp4.runtime.win/4.5.0.20201013": {
-        "runtimeTargets": {
-          "runtimes/win-x64/native/OpenCvSharpExtern.dll": {
-            "rid": "win-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/win-x64/native/OpenCvSharpExtern.pdb": {
-            "rid": "win-x64",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/win-x64/native/opencv_videoio_ffmpeg450_64.dll": {
-            "rid": "win-x64",
-            "assetType": "native",
-            "fileVersion": "2020.9.0.0"
-          },
-          "runtimes/win-x86/native/OpenCvSharpExtern.dll": {
-            "rid": "win-x86",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/win-x86/native/OpenCvSharpExtern.pdb": {
-            "rid": "win-x86",
-            "assetType": "native",
-            "fileVersion": "0.0.0.0"
-          },
-          "runtimes/win-x86/native/opencv_videoio_ffmpeg450.dll": {
-            "rid": "win-x86",
-            "assetType": "native",
-            "fileVersion": "2020.9.0.0"
-          }
-        }
-      },
-      "OpenCvSharp4.Windows/4.5.0.20201013": {
-        "dependencies": {
-          "OpenCvSharp4": "4.5.0.20201013",
-          "OpenCvSharp4.runtime.win": "4.5.0.20201013"
-        }
-      },
       "System.Drawing.Common/5.0.0": {
         "dependencies": {
           "Microsoft.Win32.SystemEvents": "5.0.0"
@@ -127,15 +56,6 @@
             "assetType": "runtime",
             "assemblyVersion": "5.0.0.0",
             "fileVersion": "5.0.20.51904"
-          }
-        }
-      },
-      "System.Memory/4.5.4": {},
-      "System.Runtime.CompilerServices.Unsafe/4.7.1": {
-        "runtime": {
-          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {
-            "assemblyVersion": "4.0.6.0",
-            "fileVersion": "4.700.20.12001"
           }
         }
       }
@@ -161,54 +81,12 @@
       "path": "microsoft.win32.systemevents/5.0.0",
       "hashPath": "microsoft.win32.systemevents.5.0.0.nupkg.sha512"
     },
-    "Newtonsoft.Json/12.0.3": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-6mgjfnRB4jKMlzHSl+VD+oUc1IebOZabkbyWj2RiTgWwYPPuaK1H97G1sHqGwPlS5npiF5Q0OrxN1wni2n5QWg==",
-      "path": "newtonsoft.json/12.0.3",
-      "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
-    },
-    "OpenCvSharp4/4.5.0.20201013": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-cBakb2ASFBxrg6jlSKUI121M6rXoUBONpvHKtpFkDseeuCkV1vYcKtkIjBDorysnJ1yI2aVIVwMiCLv6y3nvSg==",
-      "path": "opencvsharp4/4.5.0.20201013",
-      "hashPath": "opencvsharp4.4.5.0.20201013.nupkg.sha512"
-    },
-    "OpenCvSharp4.runtime.win/4.5.0.20201013": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-0CIqI7CKa2qx/5roM35vhFeoXsOqX/9MM2tPyyToApE5FPsrmTq01miWPFZ+GpqIJ3MphjGEM0/QVuXCOy5/Ww==",
-      "path": "opencvsharp4.runtime.win/4.5.0.20201013",
-      "hashPath": "opencvsharp4.runtime.win.4.5.0.20201013.nupkg.sha512"
-    },
-    "OpenCvSharp4.Windows/4.5.0.20201013": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-/imhDZoO9IhssgbL9maqTL3mvb86Q7MX8nvVX0vEm8H8xMl/WHyCdHoO5IPGP1T5bUmpB4uw2wpZdOpTCoyd2w==",
-      "path": "opencvsharp4.windows/4.5.0.20201013",
-      "hashPath": "opencvsharp4.windows.4.5.0.20201013.nupkg.sha512"
-    },
     "System.Drawing.Common/5.0.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-SztFwAnpfKC8+sEKXAFxCBWhKQaEd97EiOL7oZJZP56zbqnLpmxACWA8aGseaUExciuEAUuR9dY8f7HkTRAdnw==",
       "path": "system.drawing.common/5.0.0",
       "hashPath": "system.drawing.common.5.0.0.nupkg.sha512"
-    },
-    "System.Memory/4.5.4": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
-      "path": "system.memory/4.5.4",
-      "hashPath": "system.memory.4.5.4.nupkg.sha512"
-    },
-    "System.Runtime.CompilerServices.Unsafe/4.7.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-zOHkQmzPCn5zm/BH+cxC1XbUS3P4Yoi3xzW7eRgVpDR2tPGSzyMZ17Ig1iRkfJuY0nhxkQQde8pgePNiA7z7TQ==",
-      "path": "system.runtime.compilerservices.unsafe/4.7.1",
-      "hashPath": "system.runtime.compilerservices.unsafe.4.7.1.nupkg.sha512"
     }
   }
 }

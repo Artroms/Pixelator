@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using OpenCvSharp;
 
 namespace Pixelator
 {
@@ -114,16 +113,6 @@ namespace Pixelator
         public static double DeltaLuminocity(this Color c1, Color c2)
         {
             return Math.Abs(c1.Luminosity() - c2.Luminosity());
-        }
-
-        public static Color GetColor(this Vec3b vec)
-        {
-            return Color.FromArgb(vec.Item2, vec.Item1, vec.Item0);
-        }
-
-        public static Vec3b GetVec(this Color col)
-        {
-            return new Vec3b(col.B, col.G, col.R);
         }
 
         private struct ColorFormulas

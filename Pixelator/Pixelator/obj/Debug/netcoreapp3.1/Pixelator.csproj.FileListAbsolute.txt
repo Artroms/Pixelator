@@ -17,14 +17,3 @@ C:\Users\Artromskiy\source\repos\Pixelator\Pixelator\obj\Debug\netcoreapp3.1\Pix
 C:\Users\Artromskiy\source\repos\Pixelator\Pixelator\obj\Debug\netcoreapp3.1\Pixelator.pdb
 C:\Users\Artromskiy\source\repos\Pixelator\Pixelator\obj\Debug\netcoreapp3.1\Pixelator.genruntimeconfig.cache
 C:\Users\Artromskiy\source\repos\Pixelator\Pixelator\obj\Debug\netcoreapp3.1\Pixelator.csprojAssemblyReference.cache
-C:\Users\Artromskiy\source\repos\Pixelator\Pixelator\bin\Debug\netcoreapp3.1\OpenCvSharp.Blob.dll
-C:\Users\Artromskiy\source\repos\Pixelator\Pixelator\bin\Debug\netcoreapp3.1\OpenCvSharp.Extensions.dll
-C:\Users\Artromskiy\source\repos\Pixelator\Pixelator\bin\Debug\netcoreapp3.1\OpenCvSharp.dll
-C:\Users\Artromskiy\source\repos\Pixelator\Pixelator\bin\Debug\netcoreapp3.1\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\Artromskiy\source\repos\Pixelator\Pixelator\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\OpenCvSharpExtern.dll
-C:\Users\Artromskiy\source\repos\Pixelator\Pixelator\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\OpenCvSharpExtern.pdb
-C:\Users\Artromskiy\source\repos\Pixelator\Pixelator\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\opencv_videoio_ffmpeg450_64.dll
-C:\Users\Artromskiy\source\repos\Pixelator\Pixelator\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\OpenCvSharpExtern.dll
-C:\Users\Artromskiy\source\repos\Pixelator\Pixelator\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\OpenCvSharpExtern.pdb
-C:\Users\Artromskiy\source\repos\Pixelator\Pixelator\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\opencv_videoio_ffmpeg450.dll
-C:\Users\Artromskiy\source\repos\Pixelator\Pixelator\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
