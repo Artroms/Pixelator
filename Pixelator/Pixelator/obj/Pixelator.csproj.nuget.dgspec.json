@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Artromskiy\\source\\repos\\Pixelator\\Pixelator\\Pixelator.csproj": {}
+    "C:\\Users\\Artromskiy\\Documents\\GitHub\\Pixelator\\Pixelator\\Pixelator\\Pixelator.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Artromskiy\\source\\repos\\Pixelator\\Pixelator\\Pixelator.csproj": {
+    "C:\\Users\\Artromskiy\\Documents\\GitHub\\Pixelator\\Pixelator\\Pixelator\\Pixelator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Artromskiy\\source\\repos\\Pixelator\\Pixelator\\Pixelator.csproj",
+        "projectUniqueName": "C:\\Users\\Artromskiy\\Documents\\GitHub\\Pixelator\\Pixelator\\Pixelator\\Pixelator.csproj",
         "projectName": "Pixelator",
-        "projectPath": "C:\\Users\\Artromskiy\\source\\repos\\Pixelator\\Pixelator\\Pixelator.csproj",
+        "projectPath": "C:\\Users\\Artromskiy\\Documents\\GitHub\\Pixelator\\Pixelator\\Pixelator\\Pixelator.csproj",
         "packagesPath": "C:\\Users\\Artromskiy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Artromskiy\\source\\repos\\Pixelator\\Pixelator\\obj\\",
+        "outputPath": "C:\\Users\\Artromskiy\\Documents\\GitHub\\Pixelator\\Pixelator\\Pixelator\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Artromskiy\\AppData\\Roaming\\NuGet\\NuGet.Config",

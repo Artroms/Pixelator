@@ -10,7 +10,8 @@ namespace Pixelator
     {
         static void Main(string[] args)
         {
-            Test();
+
+            Pixelate(@"C:\Users\Artromskiy\Downloads\c993b3af862c4c6ab74c763338dfb79f.png", "c993b3af862c4c6ab74c763338dfb79fPixelated11", 6);
         }
 
         private static void Test()
@@ -50,10 +51,12 @@ namespace Pixelator
             var folder = Path.GetDirectoryName(sourcePath);
 
             var b = new Bitmap(sourcePath);
-            b = b.Scale(0.1, 0.1);
+            b = b.Resize(64, 64);
             var c = b.GetColorSet().ToList();
 
             var comp = PixelArtConverter.GetComparersByKMeansFor(c, colorsCount, ColorExtension.DeltaE);
+            var pal = new List<Color>();
+
             b.UnsafeColorWithComparer(comp, ColorExtension.DeltaE);
             b.SaveWithName(folder, resultName);
         }

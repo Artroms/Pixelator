@@ -84,8 +84,6 @@ namespace Pixelator
 
         public static List<Comparer> GetComparersByKMeansFor(List<Color> colors, int count, Func<Color, Color, double> solver)
         {
-            System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
-            sw.Start();
             List<Comparer> centroids = new List<Comparer>();
             Random rnd = new Random();
             for (int i = 0; i < count; i++)
@@ -100,12 +98,11 @@ namespace Pixelator
             }
             bool changed = true;
             int k = 0;
-            while (changed && k < 10000)
+            while (changed && k < 100)
             {
                 changed = KMeansComparersFor(centroids, solver);
                 k++;
             }
-            sw.LogAndReset("GetComparersByKMeansFor");
             return centroids;
         }
 

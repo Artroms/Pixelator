@@ -93,8 +93,6 @@ namespace Pixelator
 
         public static HashSet<Color> GetColorSet(this Bitmap b)
         {
-            System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
-            sw.Start();
             HashSet<Color> colors = new HashSet<Color>();
             for (int i = 0; i < b.Height; i++)
             {
@@ -103,7 +101,6 @@ namespace Pixelator
                     colors.Add(b.GetPixel(j, i));
                 }
             }
-            sw.LogAndReset("GetColorSet");
             return colors;
         }
 
@@ -112,8 +109,8 @@ namespace Pixelator
             Bitmap result = new Bitmap(width, height);
             using (Graphics g = Graphics.FromImage(result))
             {
-                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
+                g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
                 g.DrawImage(b, 0, 0, width, height);
             }
             return result;
@@ -165,8 +162,6 @@ namespace Pixelator
 
         public static unsafe void UnsafeColorWithComparer(this Bitmap b, List<Comparer> comparisons, Func<Color, Color, double> deltaSolver)
         {
-            System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
-            sw.Start();
             BitmapData imageData = b.LockBits(new Rectangle(0, 0, b.Width, b.Height), ImageLockMode.ReadWrite, b.PixelFormat);
             int bytesPerPixel = 4;
             byte* scan0 = (byte*)imageData.Scan0.ToPointer();
@@ -221,14 +216,11 @@ namespace Pixelator
                 });
             }
             b.UnlockBits(imageData);
-            sw.LogAndReset("UnsafeColorWithComparer");
         }
 
         public static unsafe void UnsafeColorWithPalette(this Bitmap b, List<Color> palette, Func<Color, Color, double> deltaSolver)
         {
             var tempCol = b.GetPixel(0, 0);
-            System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
-            sw.Start();
             BitmapData imageData = b.LockBits(new Rectangle(0, 0, b.Width, b.Height), ImageLockMode.ReadWrite, b.PixelFormat);
             int bytesPerPixel = 4;
             byte* scan0 = (byte*)imageData.Scan0.ToPointer();
@@ -277,14 +269,12 @@ namespace Pixelator
                 });
             }
             b.UnlockBits(imageData);
-            sw.LogAndReset("UnsafeColorWithComparer");
         }
 
         public static void SaveWithName(this Bitmap b, string folder, string name)
         {
             Directory.CreateDirectory(folder);
             string newPath = folder + @"\" + name + ".png";
-            Console.WriteLine(newPath);
             b.Save(newPath);
         }
 
